@@ -1,7 +1,7 @@
 # GPX600-digital-tachometer
 Kawasaki GPX600 digital tachometer adapted from Josepino site suitable for others 4 cylinders sportbikes
 
-For a Kawasaki Ninja 600 I have doubled the clock oscillator to 20Mhz. Whit this modification the reading speed is improved but requires a diode OR signal mixer 
+For a Kawasaki Ninja 600 I have doubled the clock oscillator to 20Mhz. Whit this modification the reading speed is improved but requires a diode signal mixer 
 to twice the ignition frequency pulses. 
 
 I have also included an additional 7 segment display to complete the digits readout because original desing divides the RPMs by 10. In this way the displayed RPMs 
