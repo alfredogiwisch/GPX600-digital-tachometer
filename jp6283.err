@@ -1,0 +1,5 @@
+Warning[205] C:\PICDIS\JP6283.ASM 5 : Found directive in column 1. (INCLUDE)
+Message[302] C:\PICDIS\JP6283.ASM 561 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\PICDIS\JP6283.ASM 564 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[224] C:\PICDIS\JP6283.ASM 568 : Use of this instruction is not recommended.
+Warning[205] C:\PICDIS\JP6283.ASM 608 : Found directive in column 1. (END)

@@ -1,0 +1,892 @@
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;-----------------------------------
+                      00002 ;PIC DISASSEMBLER LISTING
+                      00003 ;Label  Instruction
+                      00004 ;-----------------------------------
+Warning[205]: Found directive in column 1. (INCLUDE)
+                      00005 INCLUDE <P16F628.INC>
+                      00001         LIST
+                      00002 ; P16F628.INC  Standard Header File, Version 1.01    Microchip Technology, Inc.
+                      00261         LIST
+                      00006 
+                      00007 
+0000   282A           00008         GOTO 0x02A
+0001   3EFF           00009         ADDLW 0xFF
+0002   3EFF           00010         ADDLW 0xFF
+0003   3EFF           00011         ADDLW 0xFF
+0004   00FF           00012         MOVWF 0x7F
+0005   0E03           00013         SWAPF STATUS,W
+0006   0183           00014         CLRF STATUS
+0007   00A0           00015         MOVWF 0x20
+0008   080A           00016         MOVF PCLATH,W
+0009   00A1           00017         MOVWF 0x21
+000A   018A           00018         CLRF PCLATH
+000B   0804           00019         MOVF FSR,W
+000C   00A2           00020         MOVWF 0x22
+000D   280E           00021         GOTO 0x00E
+000E   08AA           00022         MOVF 0x2A,F
+000F   1903           00023         BTFSC STATUS,Z
+0010   03A9           00024         DECF 0x29,F
+0011   0BAA           00025         DECFSZ 0x2A,F
+0012   2820           00026         GOTO 0x020
+0013   08A9           00027         MOVF 0x29,F
+0014   1D03           00028         BTFSS STATUS,Z
+0015   2820           00029         GOTO 0x020
+0016   3013           00030         MOVLW 0x13
+0017   00A9           00031         MOVWF 0x29
+0018   3012           00032         MOVLW 0x12
+0019   00AA           00033         MOVWF 0x2A
+001A   30D0           00034         MOVLW 0xD0
+001B   07AB           00035         ADDWF 0x2B,F
+001C   1803           00036         BTFSC STATUS,C
+001D   0AAA           00037         INCF 0x2A,F
+001E   3001           00038         MOVLW 0x01
+001F   00AC           00039         MOVWF 0x2C
+0020   110B           00040         BCF INTCON,T0IF
+0021   0822           00041         MOVF 0x22,W
+0022   0084           00042         MOVWF FSR
+0023   0821           00043         MOVF 0x21,W
+0024   008A           00044         MOVWF PCLATH
+0025   0E20           00045         SWAPF 0x20,W
+0026   0083           00046         MOVWF STATUS
+0027   0EFF           00047         SWAPF 0x7F,F
+0028   0E7F           00048         SWAPF 0x7F,W
+0029   0009           00049         RETFIE
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+002A   30FF           00050         MOVLW 0xFF
+002B   00A4           00051         MOVWF 0x24
+002C   30FF           00052         MOVLW 0xFF
+002D   00A5           00053         MOVWF 0x25
+002E   3001           00054         MOVLW 0x01
+002F   21E2           00055         CALL 0x1E2
+0030   2213           00056         CALL 0x213
+0031   3000           00057         MOVLW 0x00
+0032   2224           00058         CALL 0x224
+0033   3000           00059         MOVLW 0x00
+0034   2226           00060         CALL 0x226
+0035   1624           00061         BSF 0x24,4
+0036   2223           00062         CALL 0x223
+0037   16A4           00063         BSF 0x24,5
+0038   2222           00064         CALL 0x222
+0039   1E05           00065         BTFSS 0x05,4
+003A   2852           00066         GOTO 0x052
+003B   30FF           00067         MOVLW 0xFF
+003C   00A8           00068         MOVWF 0x28
+003D   30C0           00069         MOVLW 0xC0
+003E   00C6           00070         MOVWF 0x46
+003F   30F9           00071         MOVLW 0xF9
+0040   00C7           00072         MOVWF 0x47
+0041   30A4           00073         MOVLW 0xA4
+0042   00C8           00074         MOVWF 0x48
+0043   30B0           00075         MOVLW 0xB0
+0044   00C9           00076         MOVWF 0x49
+0045   3099           00077         MOVLW 0x99
+0046   00CA           00078         MOVWF 0x4A
+0047   3092           00079         MOVLW 0x92
+0048   00CB           00080         MOVWF 0x4B
+0049   3082           00081         MOVLW 0x82
+004A   00CC           00082         MOVWF 0x4C
+004B   30D8           00083         MOVLW 0xD8
+004C   00CD           00084         MOVWF 0x4D
+004D   3080           00085         MOVLW 0x80
+004E   00CE           00086         MOVWF 0x4E
+004F   3090           00087         MOVLW 0x90
+0050   00CF           00088         MOVWF 0x4F
+0051   2867           00089         GOTO 0x067
+0052   01A8           00090         CLRF 0x28
+0053   303F           00091         MOVLW 0x3F
+0054   00C6           00092         MOVWF 0x46
+0055   3006           00093         MOVLW 0x06
+0056   00C7           00094         MOVWF 0x47
+0057   305B           00095         MOVLW 0x5B
+0058   00C8           00096         MOVWF 0x48
+0059   304F           00097         MOVLW 0x4F
+005A   00C9           00098         MOVWF 0x49
+005B   3066           00099         MOVLW 0x66
+005C   00CA           00100         MOVWF 0x4A
+005D   306D           00101         MOVLW 0x6D
+005E   00CB           00102         MOVWF 0x4B
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+005F   307D           00103         MOVLW 0x7D
+0060   00CC           00104         MOVWF 0x4C
+0061   3027           00105         MOVLW 0x27
+0062   00CD           00106         MOVWF 0x4D
+0063   307F           00107         MOVLW 0x7F
+0064   00CE           00108         MOVWF 0x4E
+0065   306F           00109         MOVLW 0x6F
+0066   00CF           00110         MOVWF 0x4F
+0067   1E05           00111         BTFSS 0x05,4
+0068   28AA           00112         GOTO 0x0AA
+0069   3001           00113         MOVLW 0x01
+006A   221A           00114         CALL 0x21A
+006B   3000           00115         MOVLW 0x00
+006C   2218           00116         CALL 0x218
+006D   3002           00117         MOVLW 0x02
+006E   21DB           00118         CALL 0x1DB
+006F   3002           00119         MOVLW 0x02
+0070   221A           00120         CALL 0x21A
+0071   3000           00121         MOVLW 0x00
+0072   2218           00122         CALL 0x218
+0073   3002           00123         MOVLW 0x02
+0074   21DB           00124         CALL 0x1DB
+0075   3004           00125         MOVLW 0x04
+0076   221A           00126         CALL 0x21A
+0077   3000           00127         MOVLW 0x00
+0078   2218           00128         CALL 0x218
+0079   3002           00129         MOVLW 0x02
+007A   21DB           00130         CALL 0x1DB
+007B   3008           00131         MOVLW 0x08
+007C   221A           00132         CALL 0x21A
+007D   3000           00133         MOVLW 0x00
+007E   2218           00134         CALL 0x218
+007F   3002           00135         MOVLW 0x02
+0080   21DB           00136         CALL 0x1DB
+0081   084F           00137         MOVF 0x4F,W
+0082   2218           00138         CALL 0x218
+0083   3002           00139         MOVLW 0x02
+0084   21DB           00140         CALL 0x1DB
+0085   084E           00141         MOVF 0x4E,W
+0086   2218           00142         CALL 0x218
+0087   3002           00143         MOVLW 0x02
+0088   21DB           00144         CALL 0x1DB
+0089   084D           00145         MOVF 0x4D,W
+008A   2218           00146         CALL 0x218
+008B   3002           00147         MOVLW 0x02
+008C   21DB           00148         CALL 0x1DB
+008D   084C           00149         MOVF 0x4C,W
+008E   2218           00150         CALL 0x218
+008F   3002           00151         MOVLW 0x02
+0090   21DB           00152         CALL 0x1DB
+0091   084B           00153         MOVF 0x4B,W
+0092   2218           00154         CALL 0x218
+0093   3002           00155         MOVLW 0x02
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0094   21DB           00156         CALL 0x1DB
+0095   084A           00157         MOVF 0x4A,W
+0096   2218           00158         CALL 0x218
+0097   3002           00159         MOVLW 0x02
+0098   21DB           00160         CALL 0x1DB
+0099   0849           00161         MOVF 0x49,W
+009A   2218           00162         CALL 0x218
+009B   3002           00163         MOVLW 0x02
+009C   21DB           00164         CALL 0x1DB
+009D   0848           00165         MOVF 0x48,W
+009E   2218           00166         CALL 0x218
+009F   3002           00167         MOVLW 0x02
+00A0   21DB           00168         CALL 0x1DB
+00A1   0847           00169         MOVF 0x47,W
+00A2   2218           00170         CALL 0x218
+00A3   3002           00171         MOVLW 0x02
+00A4   21DB           00172         CALL 0x1DB
+00A5   0846           00173         MOVF 0x46,W
+00A6   2218           00174         CALL 0x218
+00A7   3002           00175         MOVLW 0x02
+00A8   21DB           00176         CALL 0x1DB
+00A9   28EA           00177         GOTO 0x0EA
+00AA   30FE           00178         MOVLW 0xFE
+00AB   221A           00179         CALL 0x21A
+00AC   30FF           00180         MOVLW 0xFF
+00AD   2218           00181         CALL 0x218
+00AE   3002           00182         MOVLW 0x02
+00AF   21DB           00183         CALL 0x1DB
+00B0   30FD           00184         MOVLW 0xFD
+00B1   221A           00185         CALL 0x21A
+00B2   30FF           00186         MOVLW 0xFF
+00B3   2218           00187         CALL 0x218
+00B4   3002           00188         MOVLW 0x02
+00B5   21DB           00189         CALL 0x1DB
+00B6   30FB           00190         MOVLW 0xFB
+00B7   221A           00191         CALL 0x21A
+00B8   30FF           00192         MOVLW 0xFF
+00B9   2218           00193         CALL 0x218
+00BA   3002           00194         MOVLW 0x02
+00BB   21DB           00195         CALL 0x1DB
+00BC   30F7           00196         MOVLW 0xF7
+00BD   221A           00197         CALL 0x21A
+00BE   30FF           00198         MOVLW 0xFF
+00BF   2218           00199         CALL 0x218
+00C0   3002           00200         MOVLW 0x02
+00C1   21DB           00201         CALL 0x1DB
+00C2   084F           00202         MOVF 0x4F,W
+00C3   2218           00203         CALL 0x218
+00C4   3002           00204         MOVLW 0x02
+00C5   21DB           00205         CALL 0x1DB
+00C6   084E           00206         MOVF 0x4E,W
+00C7   2218           00207         CALL 0x218
+00C8   3002           00208         MOVLW 0x02
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00C9   21DB           00209         CALL 0x1DB
+00CA   084D           00210         MOVF 0x4D,W
+00CB   2218           00211         CALL 0x218
+00CC   3002           00212         MOVLW 0x02
+00CD   21DB           00213         CALL 0x1DB
+00CE   084C           00214         MOVF 0x4C,W
+00CF   2218           00215         CALL 0x218
+00D0   3002           00216         MOVLW 0x02
+00D1   21DB           00217         CALL 0x1DB
+00D2   084B           00218         MOVF 0x4B,W
+00D3   2218           00219         CALL 0x218
+00D4   3002           00220         MOVLW 0x02
+00D5   21DB           00221         CALL 0x1DB
+00D6   084A           00222         MOVF 0x4A,W
+00D7   2218           00223         CALL 0x218
+00D8   3002           00224         MOVLW 0x02
+00D9   21DB           00225         CALL 0x1DB
+00DA   0849           00226         MOVF 0x49,W
+00DB   2218           00227         CALL 0x218
+00DC   3002           00228         MOVLW 0x02
+00DD   21DB           00229         CALL 0x1DB
+00DE   0848           00230         MOVF 0x48,W
+00DF   2218           00231         CALL 0x218
+00E0   3002           00232         MOVLW 0x02
+00E1   21DB           00233         CALL 0x1DB
+00E2   0847           00234         MOVF 0x47,W
+00E3   2218           00235         CALL 0x218
+00E4   3002           00236         MOVLW 0x02
+00E5   21DB           00237         CALL 0x1DB
+00E6   0846           00238         MOVF 0x46,W
+00E7   2218           00239         CALL 0x218
+00E8   3002           00240         MOVLW 0x02
+00E9   21DB           00241         CALL 0x1DB
+00EA   3013           00242         MOVLW 0x13
+00EB   00A9           00243         MOVWF 0x29
+00EC   3012           00244         MOVLW 0x12
+00ED   00AA           00245         MOVWF 0x2A
+00EE   30D0           00246         MOVLW 0xD0
+00EF   00AB           00247         MOVWF 0x2B
+00F0   01AC           00248         CLRF 0x2C
+00F1   01AD           00249         CLRF 0x2D
+00F2   01AF           00250         CLRF 0x2F
+00F3   01B0           00251         CLRF 0x30
+00F4   01B1           00252         CLRF 0x31
+00F5   01B2           00253         CLRF 0x32
+00F6   01B3           00254         CLRF 0x33
+00F7   2232           00255         CALL 0x232
+00F8   3080           00256         MOVLW 0x80
+00F9   222E           00257         CALL 0x22E
+00FA   178B           00258         BSF INTCON,GIE
+00FB   168B           00259         BSF INTCON,T0IE
+00FC   2235           00260         CALL 0x235
+00FD   1A85           00261         BTFSC 0x05,5
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00FE   290F           00262         GOTO 0x10F
+00FF   082D           00263         MOVF 0x2D,W
+0100   3C01           00264         SUBLW 0x01
+0101   1D03           00265         BTFSS STATUS,Z
+0102   290E           00266         GOTO 0x10E
+0103   01AD           00267         CLRF 0x2D
+0104   3006           00268         MOVLW 0x06
+0105   07B0           00269         ADDWF 0x30,F
+0106   0830           00270         MOVF 0x30,W
+0107   3C63           00271         SUBLW 0x63
+0108   1803           00272         BTFSC STATUS,C
+0109   290E           00273         GOTO 0x10E
+010A   0AB1           00274         INCF 0x31,F
+010B   3064           00275         MOVLW 0x64
+010C   0230           00276         SUBWF 0x30,W
+010D   00B0           00277         MOVWF 0x30
+010E   2911           00278         GOTO 0x111
+010F   3001           00279         MOVLW 0x01
+0110   00AD           00280         MOVWF 0x2D
+0111   082C           00281         MOVF 0x2C,W
+0112   3C01           00282         SUBLW 0x01
+0113   1D03           00283         BTFSS STATUS,Z
+0114   291C           00284         GOTO 0x11C
+0115   01AC           00285         CLRF 0x2C
+0116   0830           00286         MOVF 0x30,W
+0117   00B2           00287         MOVWF 0x32
+0118   0831           00288         MOVF 0x31,W
+0119   00B3           00289         MOVWF 0x33
+011A   01B1           00290         CLRF 0x31
+011B   01B0           00291         CLRF 0x30
+011C   0833           00292         MOVF 0x33,W
+011D   00B6           00293         MOVWF 0x36
+011E   300A           00294         MOVLW 0x0A
+011F   00B7           00295         MOVWF 0x37
+0120   2247           00296         CALL 0x247
+0121   0838           00297         MOVF 0x38,W
+0122   00B4           00298         MOVWF 0x34
+0123   0834           00299         MOVF 0x34,W
+0124   00AE           00300         MOVWF 0x2E
+0125   082E           00301         MOVF 0x2E,W
+0126   3E46           00302         ADDLW 0x46
+0127   0084           00303         MOVWF FSR
+0128   0800           00304         MOVF INDF,W
+0129   00AE           00305         MOVWF 0x2E
+012A   082E           00306         MOVF 0x2E,W
+012B   0246           00307         SUBWF 0x46,W
+012C   1D03           00308         BTFSS STATUS,Z
+012D   2930           00309         GOTO 0x130
+012E   0828           00310         MOVF 0x28,W
+012F   00AE           00311         MOVWF 0x2E
+0130   1E05           00312         BTFSS 0x05,4
+0131   2935           00313         GOTO 0x135
+0132   3001           00314         MOVLW 0x01
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0133   221A           00315         CALL 0x21A
+0134   2937           00316         GOTO 0x137
+0135   30FE           00317         MOVLW 0xFE
+0136   221A           00318         CALL 0x21A
+0137   082E           00319         MOVF 0x2E,W
+0138   2218           00320         CALL 0x218
+0139   3001           00321         MOVLW 0x01
+013A   21FB           00322         CALL 0x1FB
+013B   0828           00323         MOVF 0x28,W
+013C   2218           00324         CALL 0x218
+013D   1A85           00325         BTFSC 0x05,5
+013E   294F           00326         GOTO 0x14F
+013F   082D           00327         MOVF 0x2D,W
+0140   3C01           00328         SUBLW 0x01
+0141   1D03           00329         BTFSS STATUS,Z
+0142   294E           00330         GOTO 0x14E
+0143   01AD           00331         CLRF 0x2D
+0144   3006           00332         MOVLW 0x06
+0145   07B0           00333         ADDWF 0x30,F
+0146   0830           00334         MOVF 0x30,W
+0147   3C63           00335         SUBLW 0x63
+0148   1803           00336         BTFSC STATUS,C
+0149   294E           00337         GOTO 0x14E
+014A   0AB1           00338         INCF 0x31,F
+014B   3064           00339         MOVLW 0x64
+014C   0230           00340         SUBWF 0x30,W
+014D   00B0           00341         MOVWF 0x30
+014E   2951           00342         GOTO 0x151
+014F   3001           00343         MOVLW 0x01
+0150   00AD           00344         MOVWF 0x2D
+0151   08B3           00345         MOVF 0x33,F
+0152   1D03           00346         BTFSS STATUS,Z
+0153   2957           00347         GOTO 0x157
+0154   0828           00348         MOVF 0x28,W
+0155   00AE           00349         MOVWF 0x2E
+0156   2965           00350         GOTO 0x165
+0157   0833           00351         MOVF 0x33,W
+0158   00B7           00352         MOVWF 0x37
+0159   300A           00353         MOVLW 0x0A
+015A   00B8           00354         MOVWF 0x38
+015B   2238           00355         CALL 0x238
+015C   0839           00356         MOVF 0x39,W
+015D   00B5           00357         MOVWF 0x35
+015E   0835           00358         MOVF 0x35,W
+015F   00AE           00359         MOVWF 0x2E
+0160   082E           00360         MOVF 0x2E,W
+0161   3E46           00361         ADDLW 0x46
+0162   0084           00362         MOVWF FSR
+0163   0800           00363         MOVF INDF,W
+0164   00AE           00364         MOVWF 0x2E
+0165   1E05           00365         BTFSS 0x05,4
+0166   296A           00366         GOTO 0x16A
+0167   3002           00367         MOVLW 0x02
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0168   221A           00368         CALL 0x21A
+0169   296C           00369         GOTO 0x16C
+016A   30FD           00370         MOVLW 0xFD
+016B   221A           00371         CALL 0x21A
+016C   082E           00372         MOVF 0x2E,W
+016D   2218           00373         CALL 0x218
+016E   3001           00374         MOVLW 0x01
+016F   21FB           00375         CALL 0x1FB
+0170   0828           00376         MOVF 0x28,W
+0171   2218           00377         CALL 0x218
+0172   1A85           00378         BTFSC 0x05,5
+0173   2984           00379         GOTO 0x184
+0174   082D           00380         MOVF 0x2D,W
+0175   3C01           00381         SUBLW 0x01
+0176   1D03           00382         BTFSS STATUS,Z
+0177   2983           00383         GOTO 0x183
+0178   01AD           00384         CLRF 0x2D
+0179   3006           00385         MOVLW 0x06
+017A   07B0           00386         ADDWF 0x30,F
+017B   0830           00387         MOVF 0x30,W
+017C   3C63           00388         SUBLW 0x63
+017D   1803           00389         BTFSC STATUS,C
+017E   2983           00390         GOTO 0x183
+017F   0AB1           00391         INCF 0x31,F
+0180   3064           00392         MOVLW 0x64
+0181   0230           00393         SUBWF 0x30,W
+0182   00B0           00394         MOVWF 0x30
+0183   2986           00395         GOTO 0x186
+0184   3001           00396         MOVLW 0x01
+0185   00AD           00397         MOVWF 0x2D
+0186   0832           00398         MOVF 0x32,W
+0187   00B6           00399         MOVWF 0x36
+0188   300A           00400         MOVLW 0x0A
+0189   00B7           00401         MOVWF 0x37
+018A   2247           00402         CALL 0x247
+018B   0838           00403         MOVF 0x38,W
+018C   00B5           00404         MOVWF 0x35
+018D   0835           00405         MOVF 0x35,W
+018E   00AE           00406         MOVWF 0x2E
+018F   082E           00407         MOVF 0x2E,W
+0190   3E46           00408         ADDLW 0x46
+0191   0084           00409         MOVWF FSR
+0192   0800           00410         MOVF INDF,W
+0193   00AE           00411         MOVWF 0x2E
+0194   08B3           00412         MOVF 0x33,F
+0195   1D03           00413         BTFSS STATUS,Z
+0196   299D           00414         GOTO 0x19D
+0197   082E           00415         MOVF 0x2E,W
+0198   0246           00416         SUBWF 0x46,W
+0199   1D03           00417         BTFSS STATUS,Z
+019A   299D           00418         GOTO 0x19D
+019B   0828           00419         MOVF 0x28,W
+019C   00AE           00420         MOVWF 0x2E
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+019D   1E05           00421         BTFSS 0x05,4
+019E   29A2           00422         GOTO 0x1A2
+019F   3004           00423         MOVLW 0x04
+01A0   221A           00424         CALL 0x21A
+01A1   29A4           00425         GOTO 0x1A4
+01A2   30FB           00426         MOVLW 0xFB
+01A3   221A           00427         CALL 0x21A
+01A4   082E           00428         MOVF 0x2E,W
+01A5   2218           00429         CALL 0x218
+01A6   3001           00430         MOVLW 0x01
+01A7   21FB           00431         CALL 0x1FB
+01A8   0828           00432         MOVF 0x28,W
+01A9   2218           00433         CALL 0x218
+01AA   1A85           00434         BTFSC 0x05,5
+01AB   29BC           00435         GOTO 0x1BC
+01AC   082D           00436         MOVF 0x2D,W
+01AD   3C01           00437         SUBLW 0x01
+01AE   1D03           00438         BTFSS STATUS,Z
+01AF   29BB           00439         GOTO 0x1BB
+01B0   01AD           00440         CLRF 0x2D
+01B1   3006           00441         MOVLW 0x06
+01B2   07B0           00442         ADDWF 0x30,F
+01B3   0830           00443         MOVF 0x30,W
+01B4   3C63           00444         SUBLW 0x63
+01B5   1803           00445         BTFSC STATUS,C
+01B6   29BB           00446         GOTO 0x1BB
+01B7   0AB1           00447         INCF 0x31,F
+01B8   3064           00448         MOVLW 0x64
+01B9   0230           00449         SUBWF 0x30,W
+01BA   00B0           00450         MOVWF 0x30
+01BB   29BE           00451         GOTO 0x1BE
+01BC   3001           00452         MOVLW 0x01
+01BD   00AD           00453         MOVWF 0x2D
+01BE   0832           00454         MOVF 0x32,W
+01BF   00B7           00455         MOVWF 0x37
+01C0   300A           00456         MOVLW 0x0A
+01C1   00B8           00457         MOVWF 0x38
+01C2   2238           00458         CALL 0x238
+01C3   0839           00459         MOVF 0x39,W
+01C4   00B6           00460         MOVWF 0x36
+01C5   0836           00461         MOVF 0x36,W
+01C6   00AE           00462         MOVWF 0x2E
+01C7   082E           00463         MOVF 0x2E,W
+01C8   3E46           00464         ADDLW 0x46
+01C9   0084           00465         MOVWF FSR
+01CA   0800           00466         MOVF INDF,W
+01CB   00AE           00467         MOVWF 0x2E
+01CC   1E05           00468         BTFSS 0x05,4
+01CD   29D1           00469         GOTO 0x1D1
+01CE   3008           00470         MOVLW 0x08
+01CF   221A           00471         CALL 0x21A
+01D0   29D3           00472         GOTO 0x1D3
+01D1   30F7           00473         MOVLW 0xF7
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+01D2   221A           00474         CALL 0x21A
+01D3   082E           00475         MOVF 0x2E,W
+01D4   2218           00476         CALL 0x218
+01D5   3001           00477         MOVLW 0x01
+01D6   21FB           00478         CALL 0x1FB
+01D7   0828           00479         MOVF 0x28,W
+01D8   2218           00480         CALL 0x218
+01D9   28FD           00481         GOTO 0x0FD
+01DA   29DA           00482         GOTO 0x1DA
+01DB   00A9           00483         MOVWF 0x29
+01DC   0829           00484         MOVF 0x29,W
+01DD   00AA           00485         MOVWF 0x2A
+01DE   3064           00486         MOVLW 0x64
+01DF   00AB           00487         MOVWF 0x2B
+01E0   3014           00488         MOVLW 0x14
+01E1   29E9           00489         GOTO 0x1E9
+01E2   00A9           00490         MOVWF 0x29
+01E3   0829           00491         MOVF 0x29,W
+01E4   00AA           00492         MOVWF 0x2A
+01E5   3064           00493         MOVLW 0x64
+01E6   00AB           00494         MOVWF 0x2B
+01E7   300A           00495         MOVLW 0x0A
+01E8   29E9           00496         GOTO 0x1E9
+01E9   00AC           00497         MOVWF 0x2C
+01EA   30FF           00498         MOVLW 0xFF
+01EB   00AD           00499         MOVWF 0x2D
+01EC   082B           00500         MOVF 0x2B,W
+01ED   00AF           00501         MOVWF 0x2F
+01EE   082A           00502         MOVF 0x2A,W
+01EF   00AE           00503         MOVWF 0x2E
+01F0   3017           00504         MOVLW 0x17
+01F1   072D           00505         ADDWF 0x2D,W
+01F2   1803           00506         BTFSC STATUS,C
+01F3   29F1           00507         GOTO 0x1F1
+01F4   0BAE           00508         DECFSZ 0x2E,F
+01F5   29F0           00509         GOTO 0x1F0
+01F6   0BAF           00510         DECFSZ 0x2F,F
+01F7   29EE           00511         GOTO 0x1EE
+01F8   0BAC           00512         DECFSZ 0x2C,F
+01F9   29EC           00513         GOTO 0x1EC
+01FA   0008           00514         RETURN
+01FB   00B7           00515         MOVWF 0x37
+01FC   0837           00516         MOVF 0x37,W
+01FD   2206           00517         CALL 0x206
+01FE   0837           00518         MOVF 0x37,W
+01FF   2206           00519         CALL 0x206
+0200   0837           00520         MOVF 0x37,W
+0201   2206           00521         CALL 0x206
+0202   0837           00522         MOVF 0x37,W
+0203   2206           00523         CALL 0x206
+0204   0837           00524         MOVF 0x37,W
+0205   2A06           00525         GOTO 0x206
+0206   00B8           00526         MOVWF 0x38
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0207   30F4           00527         MOVLW 0xF4
+0208   00B9           00528         MOVWF 0x39
+0209   30FC           00529         MOVLW 0xFC
+020A   00BA           00530         MOVWF 0x3A
+020B   0838           00531         MOVF 0x38,W
+020C   0739           00532         ADDWF 0x39,W
+020D   1C03           00533         BTFSS STATUS,C
+020E   3400           00534         RETLW 0x00
+020F   073A           00535         ADDWF 0x3A,W
+0210   1803           00536         BTFSC STATUS,C
+0211   2A0F           00537         GOTO 0x20F
+0212   0008           00538         RETURN
+0213   3007           00539         MOVLW 0x07
+0214   009F           00540         MOVWF 0x1F
+0215   2232           00541         CALL 0x232
+0216   131F           00542         BCF 0x1F,6
+0217   2A35           00543         GOTO 0x235
+0218   00A7           00544         MOVWF 0x27
+0219   2A1C           00545         GOTO 0x21C
+021A   00A6           00546         MOVWF 0x26
+021B   2A1F           00547         GOTO 0x21F
+021C   0827           00548         MOVF 0x27,W
+021D   0086           00549         MOVWF 0x06
+021E   0008           00550         RETURN
+021F   0826           00551         MOVF 0x26,W
+0220   0085           00552         MOVWF 0x05
+0221   0008           00553         RETURN
+0222   2A2B           00554         GOTO 0x22B
+0223   2A2B           00555         GOTO 0x22B
+0224   00A5           00556         MOVWF 0x25
+0225   2A28           00557         GOTO 0x228
+0226   00A4           00558         MOVWF 0x24
+0227   2A2B           00559         GOTO 0x22B
+0228   0825           00560         MOVF 0x25,W
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0229   0086           00561         MOVWF TRISB ;OBSOLETE
+022A   0008           00562         RETURN
+022B   0824           00563         MOVF 0x24,W
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+022C   0085           00564         MOVWF TRISA ;OBSOLETE
+022D   0008           00565         RETURN
+022E   00B4           00566         MOVWF 0x34
+022F   0834           00567         MOVF 0x34,W
+Warning[224]: Use of this instruction is not recommended.
+0230   0062           00568         OPTION ;OBSOLETE
+0231   0008           00569         RETURN
+0232   1683           00570         BSF STATUS,RP0
+0233   1303           00571         BCF STATUS,RP1
+0234   0008           00572         RETURN
+0235   1283           00573         BCF STATUS,RP0
+0236   1303           00574         BCF STATUS,RP1
+0237   0008           00575         RETURN
+0238   08B8           00576         MOVF 0x38,F
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0239   1903           00577         BTFSC STATUS,Z
+023A   2A44           00578         GOTO 0x244
+023B   0838           00579         MOVF 0x38,W
+023C   0237           00580         SUBWF 0x37,W
+023D   1803           00581         BTFSC STATUS,C
+023E   2A40           00582         GOTO 0x240
+023F   2A44           00583         GOTO 0x244
+0240   0838           00584         MOVF 0x38,W
+0241   0237           00585         SUBWF 0x37,W
+0242   00B7           00586         MOVWF 0x37
+0243   2A3B           00587         GOTO 0x23B
+0244   0837           00588         MOVF 0x37,W
+0245   00B9           00589         MOVWF 0x39
+0246   0008           00590         RETURN
+0247   01B9           00591         CLRF 0x39
+0248   08B7           00592         MOVF 0x37,F
+0249   1903           00593         BTFSC STATUS,Z
+024A   2A55           00594         GOTO 0x255
+024B   0837           00595         MOVF 0x37,W
+024C   0236           00596         SUBWF 0x36,W
+024D   1803           00597         BTFSC STATUS,C
+024E   2A50           00598         GOTO 0x250
+024F   2A55           00599         GOTO 0x255
+0250   0837           00600         MOVF 0x37,W
+0251   0236           00601         SUBWF 0x36,W
+0252   00B6           00602         MOVWF 0x36
+0253   0AB9           00603         INCF 0x39,F
+0254   2A4B           00604         GOTO 0x24B
+0255   0839           00605         MOVF 0x39,W
+0256   00B8           00606         MOVWF 0x38
+0257   0008           00607         RETURN
+Warning[205]: Found directive in column 1. (END)
+                      00608 END
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADEN                              00000003
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CIS                               00000003
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000001F
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+DC                                00000001
+EEADR                             0000009B
+EECON1                            0000009C
+EECON2                            0000009D
+EEDATA                            0000009A
+EEIE                              00000007
+EEIF                              00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_BO                            00000000
+NOT_BOD                           00000000
+NOT_BOR                           00000000
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+OERR                              00000001
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+OPTION_REG                        00000081
+OSCF                              00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PIE1                              0000008C
+PIR1                              0000000C
+PORTA                             00000005
+PORTB                             00000006
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RBIE                              00000003
+RBIF                              00000000
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+RX9                               00000006
+RX9D                              00000000
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1OSCEN                           00000003
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE 15
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRMT                              00000001
+TX9                               00000006
+TX9D                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+VR0                               00000000
+VR1                               00000001
+VR2                               00000002
+VR3                               00000003
+VRCON                             0000009F
+VREN                              00000007
+VROE                              00000006
+VRR                               00000005
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CP_50                            00002BFF
+_CP_75                            000017FF
+_CP_ALL                           000003FF
+_CP_OFF                           00003FFF
+_DATA_CP_OFF                      00003FFF
+_DATA_CP_ON                       00003EFF
+_ER_OSC_CLKOUT                    00003FFF
+_ER_OSC_NOCLKOUT                  00003FFE
+_EXTCLK_OSC                       00003FEF
+_HS_OSC                           00003FEE
+_INTRC_OSC_CLKOUT                 00003FFD
+_INTRC_OSC_NOCLKOUT               00003FFC
+_LP_OSC                           00003FEC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FED
+__16F628                          00000001
+MPASM  5.35beta                        JP6283.ASM   3-17-2010  21:23:04         PAGE 16
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0140 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0180 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+01C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0200 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0240 : XXXXXXXXXXXXXXXX XXXXXXXX-------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   600
+Program Memory Words Free:  1448
+
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+
